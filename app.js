@@ -16,4 +16,8 @@ app.get('/game', (req, res) => res.render('game', {pageName: 'game'}));
 
 
 
-app.listen(3000, () => console.log("Server started on port 3000"));
+let port = process.env.PORT;
+if (port == null || port == "") {
+  port = 8000;
+}
+app.listen(port, () => console.log("Server was started successfully0"));
